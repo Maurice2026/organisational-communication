@@ -10,19 +10,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Navigation Button Style */
+        /* Navigation Button - Force Visible */
         .back-home-link {
-            display: inline-block;
-            margin-bottom: 20px;
+            display: inline-block !important;
+            position: relative;
+            z-index: 1000;
+            margin: 15px 0;
             padding: 10px 20px;
-            background-color: var(--clr-accent); /* This uses your existing blue */
+            background-color: #0A3D91; /* Your professional blue */
             color: #ffffff !important;
-            text-decoration: none;
-            border-radius: 4px;
+            text-decoration: none !important;
+            border-radius: 5px;
             font-family: 'Source Serif 4', serif;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: opacity 0.3s ease;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .back-home-link:hover {
+            background-color: #082d6b;
+            text-decoration: none !important;
+        }
         }
 
         .back-home-link:hover {
@@ -70,12 +78,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        .site-header__brand {
-            font-family: var(--font-display);
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
+        <a href="index.html" class="back-home-link">← Back to Lecture List</a>
         }
         .site-header__nav {
             font-family: var(--font-body);
