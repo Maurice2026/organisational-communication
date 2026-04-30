@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An in-depth lecture on vertical communication in organisations — upward and downward flows, functions, barriers, and their impact on organisational effectiveness. Designed for tertiary institution students.">
+    <title>Topic 4: Types of Communication: Vertical (Upward & Downward) | Organisational Communication</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-deep: #0a2463;
+            --blue-mid: #1e3a8a;
+            --blue-bright: #1d4ed8;
+            --blue-light: #3b82f6;
+            --blue-pale: #dbeafe;
+            --accent-gold: #f59e0b;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --text-dark: #1e293b;
+            --text-mid: #334155;
+            --text-light: #64748b;
+            --bg-white: #ffffff;
+            --bg-soft: #f8fafc;
+            --bg-card: #f1f5f9;
+            --border: #e2e8f0;
+            --shadow: 0 4px 24px rgba(10,36,99,0.10);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--text-dark);
+            background: var(--bg-soft);
+            line-height: 1.7;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, #0a2463 0%, #1e3a8a 40%, #1d4ed8 100%);
+            color: #fff;
+            padding: 70px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -80px; right: -80px;
+            width: 320px; height: 320px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; left: -60px;
+            width: 240px; height: 240px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-bottom: 22px;
+        }
+
+        .hero-series {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 620px;
+            margin: 0 auto 28px;
+            font-weight: 300;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+        /* ── TIME BAR ── */
+        .time-bar {
+            background: #fff;
+            border-bottom: 3px solid var(--blue-bright);
+            padding: 16px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 12px rgba(10,36,99,0.08);
+        }
+
+        .time-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px 28px;
+            border-right: 1px solid var(--border);
+        }
+
+        .time-item:last-child { border-right: none; }
+
+        .time-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: 2px;
+        }
+
+        .time-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--blue-deep);
+        }
+
+        .time-item.total .time-value { color: var(--blue-bright); font-size: 1.25rem; }
+
+        /* ── LAYOUT ── */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ── TOC ── */
+        .toc {
+            background: #fff;
+            border-left: 5px solid var(--blue-bright);
+            border-radius: 0 10px 10px 0;
+            padding: 28px 32px;
+            margin: 40px 0 36px;
+            box-shadow: var(--shadow);
+        }
+
+        .toc-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--blue-deep);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc ol {
+            padding-left: 22px;
+            color: var(--text-mid);
+            font-size: 0.93rem;
+        }
+
+        .toc ol li { margin-bottom: 5px; }
+
+        .toc a {
+            color: var(--blue-bright);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .toc a:hover { text-decoration: underline; }
+
+        /* ── SECTIONS ── */
+        .section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 38px 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-number {
+            display: inline-block;
+            background: var(--blue-deep);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--blue-deep);
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .section h3 {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--blue-mid);
+            margin: 24px 0 10px;
+            padding-left: 12px;
+            border-left: 3px solid var(--blue-light);
+        }
+
+        .section p {
+            font-family: 'Merriweather', serif;
+            font-size: 0.94rem;
+            color: var(--text-mid);
+            margin-bottom: 14px;
+            line-height: 1.85;
+        }
+
+        .section ul, .section ol {
+            padding-left: 22px;
+            margin-bottom: 14px;
+        }
+
+        .section li {
+            font-family: 'Merriweather', serif;
+            font-size: 0.93rem;
+            color: var(--text-mid);
+            margin-bottom: 8px;
+            line-height: 1.75;
+        }
+
+        /* ── KEY CONCEPT BOX ── */
+        .concept-box {
+            background: var(--blue-pale);
+            border-left: 5px solid var(--blue-bright);
+            border-radius: 0 8px 8px 0;
+            padding: 18px 22px;
+            margin: 22px 0;
+        }
+
+        .concept-box-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blue-bright);
+            margin-bottom: 6px;
+        }
+
+        .concept-box p {
+            font-size: 0.91rem !important;
+            color: var(--blue-deep) !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* ── WORKPLACE EXAMPLE ── */
+        .example-box {
+            background: #f0fdf4;
+            border-left: 5px solid var(--accent-green);
+            border-radius: 0 8px 8px 0;
+            padding: 18px 22px;
+            margin: 22px 0;
+        }
+
+        .example-box-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-green);
+            margin-bottom: 6px;
+        }
+
+        .example-box p {
+            font-size: 0.91rem !important;
+            color: #166534 !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* ── WARNING BOX ── */
+        .warning-box {
+            background: #fff7ed;
+            border-left: 5px solid var(--accent-gold);
+            border-radius: 0 8px 8px 0;
+            padding: 18px 22px;
+            margin: 22px 0;
+        }
+
+        .warning-box-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 6px;
+        }
+
+        .warning-box p {
+            font-size: 0.91rem !important;
+            color: #92400e !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* ── HIERARCHY DIAGRAM ── */
+        .hierarchy {
+            margin: 28px 0;
+            text-align: center;
+        }
+
+        .hierarchy-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: 18px;
+        }
+
+        .h-level {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+
+        .h-box {
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: #fff;
+            min-width: 180px;
+            text-align: center;
+        }
+
+        .h-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            margin: 4px 0;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .h-arrow-down { color: var(--blue-bright); }
+        .h-arrow-up { color: var(--accent-green); }
+
+        .h-arrows-both {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            font-size: 1.1rem;
+        }
+
+        .h-l1 { background: var(--blue-deep); }
+        .h-l2 { background: var(--blue-mid); }
+        .h-l3 { background: var(--blue-bright); }
+        .h-l4 { background: var(--blue-light); }
+
+        .flow-labels {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 14px;
+        }
+
+        .flow-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+
+        .flow-label.down { background: #dbeafe; color: var(--blue-deep); }
+        .flow-label.up { background: #d1fae5; color: #065f46; }
+
+        /* ── STRENGTHS / WEAKNESSES TABLE ── */
+        .sw-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .sw-card {
+            border-radius: 8px;
+            padding: 18px 20px;
+        }
+
+        .sw-card.strengths { background: #f0fdf4; border-top: 4px solid var(--accent-green); }
+        .sw-card.weaknesses { background: #fff1f2; border-top: 4px solid var(--accent-red); }
+
+        .sw-card h4 {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+
+        .sw-card.strengths h4 { color: var(--accent-green); }
+        .sw-card.weaknesses h4 { color: var(--accent-red); }
+
+        .sw-card ul {
+            padding-left: 18px;
+            margin: 0;
+        }
+
+        .sw-card li {
+            font-size: 0.85rem !important;
+            margin-bottom: 6px !important;
+            color: var(--text-mid) !important;
+        }
+
+        /* ── EXAM QUESTIONS ── */
+        .exam-section {
+            background: linear-gradient(135deg, #0a2463, #1e3a8a);
+            color: #fff;
+            border-radius: 12px;
+            padding: 38px 40px;
+            margin-bottom: 30px;
+        }
+
+        .exam-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .exam-intro {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.88rem;
+            margin-bottom: 26px;
+            font-style: italic;
+        }
+
+        .exam-q {
+            background: rgba(255,255,255,0.09);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 8px 8px 0;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .q-num {
+            background: var(--accent-gold);
+            color: var(--blue-deep);
+            font-weight: 800;
+            font-size: 0.75rem;
+            min-width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .q-text {
+            font-family: 'Merriweather', serif;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.92);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .q-marks {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            white-space: nowrap;
+            margin-top: 4px;
+        }
+
+        /* ── REFERENCES ── */
+        .references {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 32px 40px;
+            margin-bottom: 40px;
+        }
+
+        .references h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--blue-deep);
+            margin-bottom: 18px;
+        }
+
+        .references ol {
+            padding-left: 22px;
+        }
+
+        .references li {
+            font-size: 0.87rem;
+            color: var(--text-mid);
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        /* ── FOOTER NAV ── */
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 24px 0 50px;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-btn.prev {
+            background: #fff;
+            color: var(--blue-deep);
+            border: 2px solid var(--border);
+        }
+
+        .nav-btn.next {
+            background: var(--blue-bright);
+            color: #fff;
+        }
+
+        .nav-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 640px) {
+            .section { padding: 26px 20px; }
+            .exam-section { padding: 26px 20px; }
+            .references { padding: 24px 20px; }
+            .sw-grid { grid-template-columns: 1fr; }
+            .time-item { padding: 8px 16px; }
+            .toc { padding: 22px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-badge">📚 Designed for Tertiary Institutions</div>
+    <div class="hero-series">Organisational Communication Lecture Series · Topic 4 of 10</div>
+    <h1>Types of Communication:<br>Vertical (Upward &amp; Downward)</h1>
+    <p class="hero-sub">Understanding how information flows through the organisational hierarchy — from leadership to staff, and from staff to leadership.</p>
+    <div class="hero-meta">
+        <span>🎓 Dr. Maurice Udom</span>
+        <span>📅 2025</span>
+        <span>🏫 Tertiary Level</span>
+    </div>
+</div>
+
+<!-- TIME BAR -->
+<div class="time-bar">
+    <div class="time-item">
+        <div class="time-label">📖 Reading</div>
+        <div class="time-value">35 mins</div>
+    </div>
+    <div class="time-item">
+        <div class="time-label">📝 Study</div>
+        <div class="time-value">25 mins</div>
+    </div>
+    <div class="time-item">
+        <div class="time-label">✏️ Practice</div>
+        <div class="time-value">20 mins</div>
+    </div>
+    <div class="time-item total">
+        <div class="time-label">⏱ Total</div>
+        <div class="time-value">80 mins</div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+        <div class="toc-title">📋 Contents</div>
+        <ol>
+            <li><a href="#intro">Introduction to Vertical Communication</a></li>
+            <li><a href="#hierarchy">Understanding Organisational Hierarchy</a></li>
+            <li><a href="#downward">Downward Communication</a></li>
+            <li><a href="#upward">Upward Communication</a></li>
+            <li><a href="#concepts">Key Concepts in Vertical Communication</a></li>
+            <li><a href="#factors">Factors Affecting Vertical Communication</a></li>
+            <li><a href="#nigeria">Vertical Communication in Nigerian Organisations</a></li>
+            <li><a href="#impact">Impact on Organisational Success and Failure</a></li>
+            <li><a href="#exam">Examination Practice Questions</a></li>
+            <li><a href="#references">References</a></li>
+        </ol>
+    </div>
+
+    <!-- SECTION 1: INTRODUCTION -->
+    <div class="section" id="intro">
+        <div class="section-number">Section 1</div>
+        <h2>Introduction to Vertical Communication</h2>
+
+        <p>Communication in any organisation does not flow in a single direction, nor does it occur only among equals. One of the most fundamental and frequently occurring patterns of organisational communication is the vertical flow — the movement of information and messages either downward from those in authority to subordinates, or upward from employees to those in leadership positions. This form of communication is central to the functioning of any structured institution, whether in government, academia, business, or the military.</p>
+
+        <p>Vertical communication is defined as the transmission of messages and information along the hierarchical structure of an organisation, either from superiors to subordinates (downward) or from subordinates to superiors (upward). Unlike horizontal communication, which occurs among colleagues of the same rank, vertical communication crosses authority levels and therefore carries particular weight in terms of power, accountability, and organisational control (Eze &amp; Nwachukwu, 2021).</p>
+
+        <div class="concept-box">
+            <div class="concept-box-title">🔑 Key Definition</div>
+            <p><strong>Vertical Communication</strong> is the structured flow of messages along the organisational hierarchy — either descending from management to staff (downward) or ascending from staff to management (upward). It is the backbone of formal communication within any institution.</p>
+        </div>
+
+        <p>The study of vertical communication is critical for students of organisational communication because it determines how policies are transmitted, how feedback reaches decision-makers, and how the overall efficiency of an organisation is maintained. A breakdown in vertical communication — whether through poor management practices, fear of reprisal, or information distortion — can cripple an organisation's ability to function effectively (Okafor, 2022).</p>
+
+        <p>This lecture examines both directions of vertical communication in detail, highlighting their functions, strengths, weaknesses, and practical applications within real organisational settings, with particular attention to the Nigerian context.</p>
+    </div>
+
+    <!-- SECTION 2: HIERARCHY -->
+    <div class="section" id="hierarchy">
+        <div class="section-number">Section 2</div>
+        <h2>Understanding Organisational Hierarchy</h2>
+
+        <p>To fully appreciate vertical communication, one must first understand the concept of organisational hierarchy. A hierarchy is a system in which individuals, roles, or departments are ranked one above the other according to levels of authority, responsibility, and decision-making power. In a typical formal organisation, the hierarchy creates a structured chain of command through which activities are coordinated and controlled.</p>
+
+        <p>Hierarchy provides the framework within which vertical communication operates. It determines who has the authority to issue directives, who is accountable to whom, and through which channels messages must flow. Without hierarchy, there would be no structure along which vertical communication could move (Adesanya &amp; Ibrahim, 2023).</p>
+
+        <h3>Levels of Organisational Hierarchy</h3>
+
+        <p>Most organisations operate with at least three to four hierarchical levels, each with distinct communication responsibilities:</p>
+
+        <div class="hierarchy">
+            <div class="hierarchy-title">Organisational Hierarchy &amp; Communication Flow</div>
+
+            <div class="h-level">
+                <div class="h-box h-l1">Top Management<br><small style="font-weight:300;font-size:0.74rem;">CEO, Director, Vice-Chancellor</small></div>
+            </div>
+            <div class="h-arrow">
+                <div class="h-arrows-both">
+                    <span class="h-arrow-down">↓ Downward</span>
+                    <span class="h-arrow-up">↑ Upward</span>
+                </div>
+            </div>
+            <div class="h-level">
+                <div class="h-box h-l2">Middle Management<br><small style="font-weight:300;font-size:0.74rem;">HODs, Managers, Deans</small></div>
+            </div>
+            <div class="h-arrow">
+                <div class="h-arrows-both">
+                    <span class="h-arrow-down">↓ Downward</span>
+                    <span class="h-arrow-up">↑ Upward</span>
+                </div>
+            </div>
+            <div class="h-level">
+                <div class="h-box h-l3">Supervisory Level<br><small style="font-weight:300;font-size:0.74rem;">Team Leaders, Coordinators</small></div>
+            </div>
+            <div class="h-arrow">
+                <div class="h-arrows-both">
+                    <span class="h-arrow-down">↓ Downward</span>
+                    <span class="h-arrow-up">↑ Upward</span>
+                </div>
+            </div>
+            <div class="h-level">
+                <div class="h-box h-l4">Operational Staff<br><small style="font-weight:300;font-size:0.74rem;">Employees, Students, Junior Staff</small></div>
+            </div>
+
+            <div class="flow-labels">
+                <div class="flow-label down">⬇ Downward Flow</div>
+                <div class="flow-label up">⬆ Upward Flow</div>
+            </div>
+        </div>
+
+        <p>Each level of the hierarchy serves as both a sender and a receiver of vertical communication. Top management sends directives downward while receiving performance reports upward. Middle management translates broad policies into operational instructions and transmits employee feedback to top management. Supervisors direct daily tasks and relay staff concerns. Operational staff receive instructions and communicate their progress, challenges, and suggestions upward (Obi &amp; Chijioke, 2022).</p>
+
+        <div class="concept-box">
+            <div class="concept-box-title">🔑 Key Concept: Formal vs. Informal Vertical Channels</div>
+            <p><strong>Formal vertical channels</strong> are officially designated paths — memos, official reports, performance reviews. <strong>Informal vertical channels</strong> include conversations between a manager and an employee in a corridor, or a phone call outside official structures. While informal channels can be faster, formal channels carry official weight and create accountability records.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 3: DOWNWARD -->
+    <div class="section" id="downward">
+        <div class="section-number">Section 3</div>
+        <h2>Downward Communication</h2>
+
+        <p>Downward communication refers to the flow of messages, instructions, policies, and information from higher levels of authority to lower levels within an organisational hierarchy. It is the most traditional and widely recognised form of vertical communication, particularly in formal institutions where authority is clearly delineated.</p>
+
+        <p>According to Katz and Kahn's (cited in Umoren &amp; Uko, 2021) classical systems theory, downward communication serves as the primary vehicle through which organisations coordinate activities, enforce standards, and motivate performance. Without it, employees at lower levels would lack direction, clarity, and a sense of purpose in their roles.</p>
+
+        <h3>Forms of Downward Communication</h3>
+        <p>Downward communication takes several forms depending on the organisational context:</p>
+        <ul>
+            <li><strong>Official Memoranda (Memos):</strong> Written directives from management to departments or staff, outlining decisions, procedures, or announcements.</li>
+            <li><strong>Policy Documents and Circulars:</strong> Formal written communications that establish rules, regulations, or standards applicable to all staff.</li>
+            <li><strong>Job Instructions:</strong> Specific oral or written guidance on how tasks are to be performed.</li>
+            <li><strong>Performance Appraisals:</strong> Feedback from supervisors to subordinates on work quality, achievement, and areas for improvement.</li>
+            <li><strong>Organisational Newsletters:</strong> Publications that keep employees informed about institutional developments, achievements, and goals.</li>
+            <li><strong>Meetings and Briefings:</strong> Formal gatherings where leadership communicates plans, policies, or expectations to staff.</li>
+            <li><strong>Email Broadcasts and Digital Notices:</strong> Electronic communication from management to staff, increasingly common in modern workplaces.</li>
+        </ul>
+
+        <h3>Functions of Downward Communication</h3>
+        <ul>
+            <li><strong>Direction and Instruction:</strong> It tells employees what is expected of them, how to perform their duties, and what targets to pursue.</li>
+            <li><strong>Motivation:</strong> When done well, downward communication recognises effort, communicates the organisation's vision, and inspires commitment.</li>
+            <li><strong>Policy Implementation:</strong> New rules, regulations, and procedures are communicated downward to ensure compliance at all levels.</li>
+            <li><strong>Coordination:</strong> It ensures that different departments and individuals work toward the same goals in a synchronised manner.</li>
+            <li><strong>Feedback Delivery:</strong> Managers use downward channels to provide performance feedback, helping employees improve and develop professionally.</li>
+        </ul>
+
+        <div class="example-box">
+            <div class="example-box-title">🏢 Workplace Example — Downward Communication</div>
+            <p>The Vice-Chancellor of a Nigerian university sends a circular to all Heads of Department directing that all academic staff must submit their course outlines by a specified date. The Heads of Department then forward this directive to their respective lecturers. This is a clear example of downward communication — an instruction originating at the top and transmitted downward through successive levels of the hierarchy until it reaches those who must act on it.</p>
+        </div>
+
+        <h3>Strengths and Weaknesses of Downward Communication</h3>
+
+        <div class="sw-grid">
+            <div class="sw-card strengths">
+                <h4>✅ Strengths</h4>
+                <ul>
+                    <li>Ensures uniformity in the application of policies</li>
+                    <li>Provides clear direction to employees</li>
+                    <li>Maintains authority and organisational control</li>
+                    <li>Facilitates coordination across departments</li>
+                    <li>Creates a documented record of directives</li>
+                </ul>
+            </div>
+            <div class="sw-card weaknesses">
+                <h4>❌ Weaknesses</h4>
+                <ul>
+                    <li>Can be one-sided and autocratic in tone</li>
+                    <li>Risk of message distortion as it passes through levels</li>
+                    <li>May exclude employee input in decision-making</li>
+                    <li>Information overload if too many directives are issued</li>
+                    <li>Can reduce staff morale if perceived as commanding</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="concept-box">
+            <div class="concept-box-title">🔑 Key Concept: Message Distortion in Downward Flow</div>
+            <p>As messages pass through multiple hierarchical levels, they are susceptible to distortion — alteration in meaning, emphasis, or detail. A directive from the CEO may be interpreted and reworded differently by a middle manager and further altered by a supervisor before reaching the operational staff. This phenomenon, known as <strong>serial distortion</strong>, is one of the most significant risks of downward communication (Ihejirika &amp; Obi, 2023).</p>
+        </div>
+    </div>
+
+    <!-- SECTION 4: UPWARD -->
+    <div class="section" id="upward">
+        <div class="section-number">Section 4</div>
+        <h2>Upward Communication</h2>
+
+        <p>Upward communication refers to the flow of messages, feedback, reports, ideas, grievances, and information from lower-level employees to those in higher positions of authority. It is the reverse of downward communication and is essential for creating a two-way flow of information in an organisation.</p>
+
+        <p>Modern management theorists argue that upward communication is not a privilege but a necessity for healthy organisational functioning. It enables management to understand the realities on the ground, monitor implementation of policies, receive employee feedback, and identify emerging problems before they escalate (Adeyemi &amp; Salami, 2022).</p>
+
+        <h3>Forms of Upward Communication</h3>
+        <ul>
+            <li><strong>Progress and Activity Reports:</strong> Regular written or oral summaries from staff or departments informing management of work status.</li>
+            <li><strong>Suggestions and Proposals:</strong> Ideas from employees directed at improving processes, products, or workplace conditions.</li>
+            <li><strong>Grievances and Complaints:</strong> Formal or informal expressions of dissatisfaction or concern submitted through appropriate channels.</li>
+            <li><strong>Employee Surveys and Questionnaires:</strong> Structured tools through which management solicits feedback on working conditions, morale, and satisfaction.</li>
+            <li><strong>Performance Feedback Responses:</strong> Employees' responses to appraisals or evaluations, including comments, queries, or appeals.</li>
+            <li><strong>Suggestion Boxes:</strong> Physical or digital channels through which employees anonymously offer ideas or concerns.</li>
+            <li><strong>Open-Door Meetings and Audiences:</strong> Face-to-face opportunities for employees to communicate directly with supervisors or senior management.</li>
+        </ul>
+
+        <h3>Functions of Upward Communication</h3>
+        <ul>
+            <li><strong>Feedback Loop:</strong> It closes the communication cycle, ensuring management knows whether directives have been received, understood, and implemented.</li>
+            <li><strong>Employee Voice:</strong> It gives workers a channel to express concerns, ideas, and perspectives, promoting a sense of inclusion and respect.</li>
+            <li><strong>Decision-Making Input:</strong> Upward communication provides data and ground-level realities that inform better managerial decisions.</li>
+            <li><strong>Early Problem Detection:</strong> Employees who communicate problems upward allow management to intervene before issues escalate into crises.</li>
+            <li><strong>Morale and Engagement:</strong> When employees feel heard, their sense of belonging and commitment to the organisation increases significantly.</li>
+        </ul>
+
+        <div class="example-box">
+            <div class="example-box-title">🏢 Workplace Example — Upward Communication</div>
+            <p>A lecturer in a Nigerian university sends a memorandum to the Head of Department informing him that the departmental photocopier has been out of service for three weeks, affecting the preparation of examination materials. The Head of Department escalates this to the Faculty Officer, who informs the Bursar. This upward chain of communication ensures that a problem encountered at the operational level reaches those with the authority to resolve it.</p>
+        </div>
+
+        <div class="concept-box">
+            <div class="concept-box-title">🔑 Key Concept: The "Filtering" Problem in Upward Communication</div>
+            <p>A major challenge of upward communication is <strong>filtering</strong> — the tendency of employees (or middle managers relaying their messages) to edit, soften, or omit information that might reflect negatively on performance or provoke criticism. Fear of reprisal, desire to impress management, or cultural norms of deference can all lead to incomplete or inaccurate upward messages. This filtering effect means that by the time information reaches top management, it may bear little resemblance to the original reality (Nwosu &amp; Eze, 2022).</p>
+        </div>
+
+        <h3>Strengths and Weaknesses of Upward Communication</h3>
+
+        <div class="sw-grid">
+            <div class="sw-card strengths">
+                <h4>✅ Strengths</h4>
+                <ul>
+                    <li>Provides management with ground-level feedback</li>
+                    <li>Enhances employee morale and sense of belonging</li>
+                    <li>Supports better and more informed decision-making</li>
+                    <li>Enables early identification of organisational problems</li>
+                    <li>Builds a culture of trust and openness</li>
+                </ul>
+            </div>
+            <div class="sw-card weaknesses">
+                <h4>❌ Weaknesses</h4>
+                <ul>
+                    <li>Subject to filtering by employees who fear reprisal</li>
+                    <li>Often delayed or suppressed in hierarchical cultures</li>
+                    <li>May be ignored or dismissed by management</li>
+                    <li>Junior staff may feel intimidated to speak up</li>
+                    <li>Difficult to sustain in large or bureaucratic organisations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="concept-box">
+            <div class="concept-box-title">🔑 Key Concept: Open-Door Policy as an Upward Communication Tool</div>
+            <p>The <strong>open-door policy</strong> is a management strategy in which leaders signal their willingness to receive direct communication from any level of staff at any time. It is one of the most effective tools for encouraging upward communication, as it reduces the psychological barrier of hierarchy. However, for an open-door policy to succeed, management must demonstrate genuine receptiveness — not merely declare one (Chukwuemeka &amp; Amadi, 2023).</p>
+        </div>
+    </div>
+
+    <!-- SECTION 5: KEY CONCEPTS -->
+    <div class="section" id="concepts">
+        <div class="section-number">Section 5</div>
+        <h2>Further Key Concepts in Vertical Communication</h2>
+
+        <h3>Serial Transmission and the Telephone Effect</h3>
+        <p>When a message passes through multiple hierarchical levels, each person who receives and retransmits it introduces the possibility of error, omission, or reinterpretation. This is known as <strong>serial transmission</strong>. The more levels a message must traverse, the greater the cumulative risk of distortion. Scholars compare this to the childhood game of "telephone" (or "broken telephone") — by the time the original message reaches its final destination, it may be unrecognisable (Okafor, 2022).</p>
+
+        <h3>Information Gatekeeping</h3>
+        <p><strong>Gatekeeping</strong> occurs when individuals at intermediate levels of the hierarchy — typically middle managers — exercise discretion over what information to pass upward or downward. While some degree of gatekeeping is necessary to avoid information overload, excessive gatekeeping can suppress critical data, distort organisational realities, and concentrate power inappropriately (Adeyemi &amp; Salami, 2022).</p>
+
+        <h3>Communication Climate and Psychological Safety</h3>
+        <p>The quality of vertical communication is deeply influenced by an organisation's <strong>communication climate</strong> — the prevailing atmosphere of trust, openness, or fear within which people communicate. In organisations with a supportive communication climate, employees feel psychologically safe to speak honestly upward. In restrictive or authoritarian environments, upward communication is often stifled, and downward communication tends toward command rather than dialogue (Eze &amp; Nwachukwu, 2021).</p>
+
+        <div class="warning-box">
+            <div class="warning-box-title">⚠️ Important Note</div>
+            <p>Communication climate is not created by a single policy or pronouncement. It is cultivated — or destroyed — by the consistent daily behaviour of leaders. An executive who punishes bearers of bad news will quickly find that no bad news reaches them — until it is too late.</p>
+        </div>
+
+        <h3>The Role of Feedback in Completing the Vertical Loop</h3>
+        <p>Vertical communication is most effective when it functions as a <strong>closed loop</strong> — where downward directives are followed by upward responses, and where those responses are acknowledged and acted upon. A loop that does not close — where management sends instructions but never receives or acknowledges feedback — is characteristic of a dysfunctional communication system. The absence of feedback signifies either a breakdown in upward channels or a management culture that does not value employee input (Ihejirika &amp; Obi, 2023).</p>
+    </div>
+
+    <!-- SECTION 6: FACTORS -->
+    <div class="section" id="factors">
+        <div class="section-number">Section 6</div>
+        <h2>Factors Affecting Vertical Communication</h2>
+
+        <p>The effectiveness of vertical communication — both upward and downward — is shaped by a range of internal and external factors. Understanding these factors is essential for diagnosing communication problems and implementing meaningful improvements.</p>
+
+        <h3>1. Organisational Culture</h3>
+        <p>Culture is arguably the most powerful determinant of vertical communication quality. Organisations with cultures that value transparency, participatory decision-making, and mutual respect tend to have richer and more honest vertical communication flows. Conversely, cultures defined by secrecy, rigid authority, or distrust suppress both upward feedback and genuine downward engagement (Umoren &amp; Uko, 2021).</p>
+
+        <h3>2. Leadership Style</h3>
+        <p>The style of leadership significantly shapes vertical communication patterns. <strong>Autocratic leaders</strong> typically dominate downward communication channels, issuing directives with little room for response. <strong>Democratic or participative leaders</strong>, by contrast, actively solicit upward input and create space for dialogue. <strong>Laissez-faire leaders</strong> may provide so little downward direction that employees are left without adequate guidance (Obi &amp; Chijioke, 2022).</p>
+
+        <h3>3. Psychological Barriers</h3>
+        <p>Fear, status intimidation, and anxiety about consequences are among the most persistent barriers to effective upward communication. When employees fear being dismissed, ridiculed, or penalised for expressing views or reporting problems, they default to silence — depriving management of information it needs to function effectively. These psychological barriers are particularly pronounced in highly hierarchical or militaristic organisational structures (Adeyemi &amp; Salami, 2022).</p>
+
+        <h3>4. Information Overload</h3>
+        <p>When downward communication is excessive — too many memos, directives, bulletins, and announcements — employees become overwhelmed and struggle to identify and prioritise what is truly important. Information overload paradoxically reduces the effectiveness of communication by flooding recipients with more content than they can meaningfully process (Nwosu &amp; Eze, 2022).</p>
+
+        <h3>5. Span of Control and Organisational Size</h3>
+        <p>Larger organisations with many hierarchical levels face greater risks of vertical communication breakdown simply because messages must travel further and through more intermediaries. The wider the span of control, the harder it is for top management to maintain close communication with all staff, and the greater the dependence on intermediaries who may distort the message (Adesanya &amp; Ibrahim, 2023).</p>
+
+        <h3>6. Technology and Communication Infrastructure</h3>
+        <p>The quality of available communication technology directly affects vertical communication. Organisations with modern digital infrastructure — intranets, enterprise messaging systems, video conferencing platforms — have more tools for facilitating efficient and accurate vertical communication. Those relying exclusively on slow, traditional channels risk delays, gaps, and distortions in both upward and downward flows (Chukwuemeka &amp; Amadi, 2023).</p>
+    </div>
+
+    <!-- SECTION 7: NIGERIA -->
+    <div class="section" id="nigeria">
+        <div class="section-number">Section 7</div>
+        <h2>Vertical Communication in Nigerian Organisations</h2>
+
+        <p>The Nigerian organisational environment presents a distinctive context for understanding vertical communication. A complex interplay of cultural traditions, governmental structures, and evolving workplace practices shapes how messages flow between authority levels in Nigerian institutions.</p>
+
+        <h3>Cultural Dimensions of Hierarchy in Nigeria</h3>
+        <p>Nigerian society has a high power distance orientation — that is, it tends to accept and expect significant inequalities in power distribution between individuals of different social and organisational status. This cultural disposition directly influences vertical communication. In many Nigerian workplaces, junior staff are socialised to defer to authority, rarely question decisions made by superiors, and express dissent — if at all — through indirect means. While this reflects cultural respect, it often inhibits the free flow of upward communication that healthy organisations require (Eze &amp; Nwachukwu, 2021).</p>
+
+        <h3>Common Practices in Nigerian Public Institutions</h3>
+        <p>In Nigerian public organisations — government ministries, universities, hospitals, and agencies — downward communication often predominates. Official circulars, administrative memos, and policy directives are the most common vehicles of vertical communication. Upward communication, though formally encouraged, is often filtered through multiple bureaucratic layers before reaching decision-makers. The result is that top leadership may be insulated from operational realities, particularly in large public institutions (Okafor, 2022).</p>
+
+        <div class="example-box">
+            <div class="example-box-title">🏢 Nigerian Organisational Context</div>
+            <p>In a typical Nigerian government ministry, a junior officer who identifies a procedural inefficiency must route the concern upward through the senior officer, then the assistant director, then the director, and finally — if the matter survives this chain — to the Permanent Secretary or Minister. By the time the message arrives at the top (if it arrives at all), it may have been sanitised beyond recognition, or simply discarded at an intermediate level.</p>
+        </div>
+
+        <h3>Emerging Improvements: Digital Tools and Flat Structures</h3>
+        <p>Contemporary Nigerian organisations — particularly in the private sector, fintech companies, and higher institutions embracing change — are beginning to adopt structures and technologies that improve vertical communication. Digital communication platforms such as organisational WhatsApp groups, email chains, and enterprise collaboration tools have reduced some of the traditional barriers of hierarchy, enabling more direct communication between different levels of staff. The trend toward flatter organisational structures, in which fewer intermediate layers exist between top management and staff, also enhances both upward and downward communication quality (Ihejirika &amp; Obi, 2023).</p>
+
+        <p>However, these improvements must be accompanied by a corresponding shift in organisational culture — from one that punishes candour to one that rewards it — if the technological tools are to yield meaningful improvements in vertical communication practice.</p>
+    </div>
+
+    <!-- SECTION 8: IMPACT -->
+    <div class="section" id="impact">
+        <div class="section-number">Section 8</div>
+        <h2>Impact of Vertical Communication on Organisational Success and Failure</h2>
+
+        <p>The quality of vertical communication is among the most consequential determinants of whether an organisation thrives or struggles. When it functions effectively, it creates alignment, trust, and agility. When it fails, it breeds confusion, low morale, and institutional dysfunction.</p>
+
+        <h3>When Vertical Communication Works Well</h3>
+        <p>Organisations with effective vertical communication demonstrate several hallmarks of institutional health. Employees at all levels understand the organisation's goals and their individual roles in achieving them. Policies are implemented consistently because directives are clear and properly received. Management makes sound decisions because it has access to accurate ground-level information. Problems are identified and resolved promptly because both upward reporting and downward response are functioning. Staff morale is generally higher because employees feel their voices matter and that leadership is transparent about organisational direction (Adeyemi &amp; Salami, 2022).</p>
+
+        <h3>When Vertical Communication Fails</h3>
+        <p>Communication failure in the vertical dimension carries serious organisational consequences. If downward communication is unclear, contradictory, or excessive, employees become confused, disengaged, or overwhelmed. If upward communication is suppressed — whether by fear, culture, or structural barriers — management operates blind, unaware of problems until they reach crisis proportions. Historical studies of major organisational failures have repeatedly identified breakdowns in vertical communication as a root cause: frontline staff who knew of problems but could not — or felt they could not — communicate them upward (Nwosu &amp; Eze, 2022).</p>
+
+        <div class="warning-box">
+            <div class="warning-box-title">⚠️ Reflection Point</div>
+            <p>Consider any well-known institutional failure — a hospital scandal, a government policy disaster, or a corporate collapse. In most cases, an investigation reveals that warnings existed at lower levels but failed to reach decision-makers in time. This is the cost of broken vertical communication.</p>
+        </div>
+
+        <h3>Strategies for Improving Vertical Communication</h3>
+        <ul>
+            <li>Establishing clear and consistent channels for both downward and upward communication</li>
+            <li>Training managers in effective communication — including listening, not merely directing</li>
+            <li>Adopting open-door policies backed by genuine management receptiveness</li>
+            <li>Using anonymous feedback mechanisms to reduce the filtering effect of fear</li>
+            <li>Reducing unnecessary hierarchical levels to shorten the communication chain</li>
+            <li>Leveraging digital tools to enable more direct and timely vertical communication</li>
+            <li>Cultivating a communication climate in which candour is rewarded and silence is not the safer option</li>
+        </ul>
+    </div>
+
+    <!-- EXAM SECTION -->
+    <div class="exam-section" id="exam">
+        <div class="section-number" style="background:rgba(255,255,255,0.2);margin-bottom:10px;">Section 9</div>
+        <h2>📝 Examination Practice Questions</h2>
+        <p class="exam-intro">The following questions are designed to prepare students for examinations in Organisational Communication. Practice answering each question with relevant examples, theoretical references, and clear paragraph structure.</p>
+
+        <div class="exam-q">
+            <div class="q-num">1</div>
+            <div>
+                <div class="q-text">Define vertical communication and distinguish clearly between its upward and downward dimensions. Use relevant examples to illustrate your answer.</div>
+                <div class="q-marks">📊 15 marks</div>
+            </div>
+        </div>
+
+        <div class="exam-q">
+            <div class="q-num">2</div>
+            <div>
+                <div class="q-text">Enumerate and discuss five forms of downward communication commonly found in Nigerian public organisations.</div>
+                <div class="q-marks">📊 15 marks</div>
+            </div>
+        </div>
+
+        <div class="exam-q">
+            <div class="q-num">3</div>
+            <div>
+                <div class="q-text">Discuss the concept of message distortion as it occurs in downward communication. What measures can an organisation take to minimise this problem?</div>
+                <div class="q-marks">📊 20 marks</div>
+            </div>
+        </div>
+
+        <div class="exam-q">
+            <div class="q-num">4</div>
+            <div>
+                <div class="q-text">List and discuss four factors that hinder effective upward communication in large organisations, with specific reference to the Nigerian organisational environment.</div>
+                <div class="q-marks">📊 20 marks</div>
+            </div>
+        </div>
+
+        <div class="exam-q">
+            <div class="q-num">5</div>
+            <div>
+                <div class="q-text">In your opinion, which direction of vertical communication — upward or downward — is more critical for the success of a Nigerian tertiary institution? Justify your position with evidence and examples.</div>
+                <div class="q-marks">📊 20 marks</div>
+            </div>
+        </div>
+
+        <div class="exam-q">
+            <div class="q-num">6</div>
+            <div>
+                <div class="q-text">Discuss the concept of information gatekeeping in vertical communication. How does gatekeeping affect the quality of decision-making at top management level?</div>
+                <div class="q-marks">📊 15 marks</div>
+            </div>
+        </div>
+
+        <div class="exam-q">
+            <div class="q-num">7</div>
+            <div>
+                <div class="q-text">Enumerate the functions of upward communication in an organisation. With practical examples, explain how the absence of effective upward communication can lead to institutional failure.</div>
+                <div class="q-marks">📊 20 marks</div>
+            </div>
+        </div>
+
+        <div class="exam-q">
+            <div class="q-num">8</div>
+            <div>
+                <div class="q-text">Discuss the relationship between leadership style and the quality of vertical communication in an organisation. Which leadership style best supports a healthy two-way vertical communication flow?</div>
+                <div class="q-marks">📊 20 marks</div>
+            </div>
+        </div>
+
+        <div class="exam-q">
+            <div class="q-num">9</div>
+            <div>
+                <div class="q-text">In your opinion, has the introduction of digital communication tools improved vertical communication in Nigerian organisations? Discuss with reference to specific digital platforms and their impact.</div>
+                <div class="q-marks">📊 15 marks</div>
+            </div>
+        </div>
+
+        <div class="exam-q">
+            <div class="q-num">10</div>
+            <div>
+                <div class="q-text">List and explain five practical strategies that management can adopt to improve the effectiveness of both upward and downward communication in a large Nigerian organisation.</div>
+                <div class="q-marks">📊 20 marks</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REFERENCES -->
+    <div class="references" id="references">
+        <h2>📚 References</h2>
+        <ol>
+            <li>Adesanya, T. A., &amp; Ibrahim, M. O. (2023). <em>Hierarchical structures and communication efficiency in Nigerian public institutions.</em> Journal of Public Administration and Communication, 11(2), 34–51.</li>
+            <li>Adeyemi, B. F., &amp; Salami, K. A. (2022). Upward communication and employee voice in Nigerian corporate organisations. <em>African Journal of Business Communication,</em> 9(1), 12–29.</li>
+            <li>Chukwuemeka, O. N., &amp; Amadi, L. C. (2023). Digital platforms and vertical communication transformation in Nigerian enterprises. <em>Nigerian Journal of Media and Communication Studies,</em> 15(3), 88–107.</li>
+            <li>Eze, P. N., &amp; Nwachukwu, C. E. (2021). Power distance, culture, and organisational communication in sub-Saharan Africa. <em>International Journal of Communication and Development,</em> 7(4), 56–74.</li>
+            <li>Ihejirika, O. D., &amp; Obi, R. C. (2023). Serial distortion and message fidelity in downward communication channels: Evidence from Nigerian organisations. <em>Journal of Communication Research Africa,</em> 18(2), 44–63.</li>
+            <li>Nwosu, C. F., &amp; Eze, A. I. (2022). Filtering and suppression in upward communication: A study of Nigerian university administrative structures. <em>Nigerian Communication Review,</em> 14(1), 21–40.</li>
+            <li>Obi, E. C., &amp; Chijioke, B. U. (2022). Leadership communication styles and vertical communication effectiveness in Nigerian organisations. <em>African Leadership and Management Journal,</em> 6(3), 67–85.</li>
+            <li>Okafor, U. G. (2022). <em>Organisational communication in practice: Nigerian perspectives.</em> University of Port Harcourt Press.</li>
+            <li>Umoren, A. E., &amp; Uko, B. I. (2021). Formal communication flows and organisational performance: A study of Nigerian government agencies. <em>Journal of Administrative Science and Communication,</em> 10(2), 18–37.</li>
+        </ol>
+    </div>
+
+    <!-- FOOTER NAV -->
+    <div class="footer-nav">
+        <a href="#" class="nav-btn prev">← Topic 3: Theories of Communication</a>
+        <a href="#" class="nav-btn next">Topic 5: Horizontal &amp; Diagonal Communication →</a>
+    </div>
+
+</div>
+</body>
+</html>
